@@ -26,7 +26,7 @@ class Paciente(Pessoa):
     sus = models.CharField(max_length=15, unique=True, verbose_name='Sus')
 
     def __str__(self):
-        return f'{self.nome} | SUS: {self.sus} | CPF {self.cpf}'
+        return f'{self.nome} | SUS: {self.sus} | CPF: {self.cpf}'
 
 
 class Fabricante(models.Model):
