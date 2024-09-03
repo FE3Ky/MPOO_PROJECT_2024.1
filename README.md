@@ -4,7 +4,7 @@
 <p>Está aplicação foi criada pelos alunos Caio César e Iago Felipe do curso de Bacharelado em Sistemas de Informação-UFRPE Campus Serra Talhada (UAST) para contar como uma Atividade Avaliativa da Turma de MPOO 2024.1. O tema escolhido para tal aplicação foi a implementação de um sistema para agendamento de vacinação. Foi desenvolvida com a utilização de <strong>Framework Django</strong> e <strong>PostgreSQL</strong>.</p>
 
 <h2>Objetivo Geral</h2> 
-<p>A aplicação foi criada para gerir funcionários, pacientes e vacinas e fazer agendamentos de vacinação. </p>
+<p>A aplicação foi criada com o intuito de conseguir gerir funcionários, pacientes e vacinas e fazer com que os funcionários consigam fazer o agendamento de vacinação dos pacientes. </p>
 
 <h2>Visão Geral</h2>
 <p>A aplicação pode realizar as seguintes operações:</p>
