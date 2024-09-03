@@ -10,7 +10,7 @@
   <li> <strong>GERIR FUNCIONARIOS:</strong> Adicionar, atualizar, listar e excluir funcionários.</li>
   <li> <strong>GERIR PACIENTES:</strong> Adicionar, atualizar, listar e excluir pacientes.</li>
   <li> <strong>GERIR VACINAS:</strong> Adicionar, atualizar, listar e excluir vacinas.</li>
-  <li> <strong>AGENDAMENTO DE VACINAÇÃO:Agendar</strong> </li>
+  <li> <strong>AGENDAMENTO DE VACINAÇÃO:</strong> Agendar.</li>
 
 </ul>
 
