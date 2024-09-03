@@ -10,6 +10,7 @@ admin.site.register(Fabricante)
 admin.site.register(Paciente)
 admin.site.register(Vacina)
 
+
 class AgendamentoAdmin(admin.ModelAdmin):
     list_display = ('paciente', 'vacina', 'data', 'status')
 
