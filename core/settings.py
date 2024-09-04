@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import os.path
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,8 +80,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("DATABASE_NAME", default="postgres"),
+        'USER': os.getenv("DATABASE_USER", default="postgres"),
+        'PASSWORD': os.getenv("DATABASE_PASSWORD", default="<PASSWORD>"),
+        'HOST': os.getenv("DATABASE_HOST", default="localhost"),
+        'PORT': os.getenv("DATABASE_PORT", default="5432"),
     }
 }
 
@@ -128,49 +135,50 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     'site_title': 'EVE',
     'site_header': 'EVE',
-    'site_brand': 'EVE',
-    "site_logo": "static/assets/logg.png",
-    "site_icon": None,
+    'site_brand': 'Bem vindo ao EVE',
+    "site_logo": "/assets/logo_mini4.svg",
+    "site_icon": "/assets/logo_mini4.svg",
     "copyright": "Electronic Vaccine Enrollment",
     "show_sidebar": True,
-    "navigation_expanded": True,
+    "navigation_expanded": False,
     "related_modal_active": True,
     "changeform_format": "horizontal_tabs",
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     "icons": {
         "auth": "fas fa-users-cog",
     },
+    "show_ui_builder": True,
 }
 
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
     "footer_small_text": False,
-    "body_small_text": False,
+    "body_small_text": True,
     "brand_small_text": False,
     "brand_colour": False,
-    "accent": "accent-navy",
+    "accent": "accent-lightblue",
     "navbar": "navbar-light",
     "no_navbar_border": True,
     "navbar_fixed": False,
     "layout_boxed": False,
     "footer_fixed": False,
-    "sidebar_fixed": True,
+    "sidebar_fixed": False,
     "sidebar": "sidebar-light-success",
-    "sidebar_nav_small_text": True,
+    "sidebar_nav_small_text": False,
     "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": False,
+    "sidebar_nav_child_indent": True,
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": True,
     "sidebar_nav_flat_style": False,
     "theme": "minty",
-    "dark_mode_theme": None,
+    "dark_mode_theme": False,
     "button_classes": {
         "primary": "btn-primary",
         "secondary": "btn-outline-secondary",
         "info": "btn-outline-info",
-        "warning": "btn-warning",
-        "danger": "btn-danger",
-        "success": "btn-success"
+        "warning": "btn-outline-warning",
+        "danger": "btn-outline-danger",
+        "success": "btn-outline-success"
     },
     "actions_sticky_top": False
 }
