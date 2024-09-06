@@ -10,6 +10,9 @@
 ## Descrição
 EVE foi desenvolvido em Python utilizando o framework Django, tem como objetivo facilitar o agendamento de vacinação. O banco de dados PostgreSQL armazena informações sobre pessoas, funcionários, vacinas e agendamentos. A interface administrativa é personalizada com o template Jazzmin para uma melhor experiência do usuário.
 
+## Relatório
+https://docs.google.com/document/d/1dqnDoqHg_5I35LPZklsAGpVeaSN8d58s2vwMMqDN0Uk/edit?usp=sharing
+
 ## Tecnologias
 * Python
 * Django
