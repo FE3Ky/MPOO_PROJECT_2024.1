@@ -50,6 +50,7 @@ Acesse o Django Admin em:
  * Cadastro: Permite cadastrar pessoas, funcionários, vacinas e fabricantes.
  * Agendamento: Permite agendar vacinas para pacientes.
  * Consulta: Permite consultar agendamentos e informações sobre pacientes e vacinas.
+ * Relatorio de Registro: Registra todos os agendamentos concluidos realizados.
  * Jazzmin: A interface administrativa foi personalizada, oferecendo uma experiência visual mais agradável e intuitiva.
 
 ## Personalização
@@ -57,9 +58,6 @@ Para personalizar a interface Jazzmin, basta ir ao ícone na parte superior dire
 ![](static/assets/eve_screenshot_2_custom.jpeg.png)
 ![](static/assets/eve_screenshot_1_custom.jpeg)
 ![](static/assets/eve_screenshot_3_custom.jpeg.png)
-
-## Diagrama de Classes
-<img src="static/assets/eve_class_uml.jpeg">
 
 ## Licença:
 Este projeto está licenciado sob a licença MIT.

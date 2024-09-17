@@ -21,6 +21,9 @@ class Pessoa(models.Model):
 class Funcionario(Pessoa):
     cnes = models.CharField(max_length=6, verbose_name='Cnes')
 
+    def __str__(self):
+        return self.nome
+
 
 class Paciente(Pessoa):
     sus = models.CharField(max_length=15, unique=True, verbose_name='Sus')
@@ -53,6 +56,22 @@ class Agendamento(models.Model):
     vacina = models.ForeignKey(Vacina, on_delete=models.PROTECT)
     data = models.DateField()
     status = models.CharField(choices=STATUS_CHOICES, max_length=10, default=STATUS_CHOICES[0][0])
+    funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
 
     def __str__(self):
         return f'{self.paciente} | {self.vacina} | {self.data} | {self.status}'
+
+
+class Registro(models.Model):
+    paciente = models.ForeignKey(Paciente, on_delete=models.PROTECT)
+    vacina = models.ForeignKey(Vacina, on_delete=models.PROTECT)
+    funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
+    agendamento = models.ForeignKey(Agendamento, on_delete=models.PROTECT)
+    data = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Relatorio de Registro de Vacinação'
+        verbose_name_plural = 'Relatorios de Registros de Vacinação'
+
+    def __str__(self):
+        return f'{self.paciente} | {self.vacina} | {self.funcionario} | {self.agendamento} | {self.data}'
