@@ -19,7 +19,7 @@ class Pessoa(models.Model):
 
 
 class Funcionario(Pessoa):
-    cnes = models.CharField(max_length=6, verbose_name='Cnes')
+    cnes = models.CharField(max_length=6, unique=True, verbose_name='Cnes')
 
     def __str__(self):
         return self.nome
