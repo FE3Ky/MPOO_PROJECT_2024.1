@@ -14,6 +14,7 @@ admin.site.register(Vacina)
 
 class AgendamentoAdmin(admin.ModelAdmin):
     list_display = ('paciente', 'vacina', 'data', 'status')
+    list_filter = ('paciente__nome', 'vacina__tipo', 'data')
 
     def has_change_permission(self, request, obj=None):
         return obj.status == STATUS_CHOICES[0][0] if obj is not None else False

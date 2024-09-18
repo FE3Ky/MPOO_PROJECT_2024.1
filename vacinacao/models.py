@@ -1,12 +1,12 @@
 from django.db import models
-from vacinacao.choices import STATUS_CHOICES
+from vacinacao.choices import STATUS_CHOICES, GENDER_CHOICES
 
 
 class Pessoa(models.Model):
     nome = models.CharField(max_length=100, verbose_name='Nome')
     cpf = models.CharField(max_length=11, unique=True, verbose_name='CPF')
     data_nascimento = models.DateField()
-    sexo = models.CharField(choices=(('M', 'Masculino'), ('F', 'Feminino')), max_length=11, verbose_name='Sexo')
+    sexo = models.CharField(choices=GENDER_CHOICES, max_length=11, verbose_name='Gênero')
     rua = models.CharField(max_length=50, verbose_name='Rua')
     bairro = models.CharField(max_length=50, verbose_name='Bairro')
     numero = models.CharField(max_length=5, verbose_name='Numero')

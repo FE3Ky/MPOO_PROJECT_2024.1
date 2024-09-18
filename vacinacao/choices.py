@@ -3,3 +3,8 @@ STATUS_CHOICES = (
     ("concluido", "Concluido"),
     ("cancelado", "Cancelado"),
 )
+
+GENDER_CHOICES = (
+    ('M', 'Masculino'),
+    ('F', 'Feminino')
+)
